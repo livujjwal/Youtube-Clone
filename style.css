@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+  background-color: #000;
+}
+#search-box {
+  width: 40vw;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #303030;
+  border-radius: 5px;
+  
+}
+#search-input {
+  background: #121212;
+  flex-grow: 1;
+  padding: 10px 20px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+#search-input::placeholder {
+  color: #aaaaaa;
+}
+#search-btn {
+  width: 4vw;
+  border: none;
+  background-color: #303030;
+  transition: all 0.5s ease;
+}
+
+.search-icon {
+    width: 100%;
+    transition: all 0.5s ease;
+  background-color: #303030;
+}
+#search-btn:hover{
+    box-sizing: border-box;
+    cursor: pointer;
+}
+#video-container {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.video {
+  overflow: hidden;
+  box-shadow: 2px  0px 5px #000;
+  border-radius: 20px;
+  width: 250px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.video-img {
+  border-radius: 2px 2px 0px 0px;
+  object-fit: fill;
+  width: 250px;
+  height: 240px;
+  box-sizing: border-box;
+}
+.video-info {
+  border-radius:2px;
+  width: 250px;
+  height: 100px;
+  display: flex;
+  background-color: #000;
+  color: #ffffff;
+  gap: 20px;
+}
+.video-info-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+.video-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.video-info-right {
+  height: 12vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+.video-title,
+.video-channel,
+.video-view {
+  overflow: hidden;
+  margin: 0px;
+  padding: 5px;
+  background-color: #000;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.video-channel,
+.video-view {
+  color: #aaa;
+  font-weight: 400;
+}
