@@ -1,9 +1,11 @@
 const comments = document.getElementById("comment-container");
 const apiKey = "AIzaSyBXquP3mozAoCGA2MoQL332vfmYG-CeVHo";
 const baseURL = `https://www.googleapis.com/youtube/v3/commentThreads`;
-
+const countOfComments  =document.getElementById("countOfComments");
 window.addEventListener("load",() => {
-    let videoId = document.cookie.split("=")[1];
+    // console.log(document.cookie.split('=')[2]);
+    let commentCount = document.cookie.split('=')[2];
+    let videoId = document.cookie.split('=')[1].split(";")[0];
     // console.log(videoId);
     if(YT){
     new YT.Player("play-video",{
@@ -12,6 +14,7 @@ window.addEventListener("load",() => {
         videoId,
     });
     loadComments(videoId);
+    countOfComments.innerHTML = `${commentCount} Comments`
 }
 })
 // loadComments
@@ -29,6 +32,7 @@ async function loadComments(videoId) {
 
 function renderComments(commentList) {
 //   console.log(commentList);
+
   commentList.forEach((element) => {
     // console.log(element.snippet.topLevelComment.snippet.authorDisplayName);
     const comment = document.createElement("div");

@@ -3,7 +3,6 @@ const baseURL = `https://www.googleapis.com/youtube/v3`;
 const userInput = document.getElementById("search-input");
 const videoContainer = document.getElementById("video-container");
 const inputBtn = document.getElementById("search-btn");
-
 //getTimeGap
 function getTimeGap(publishTime) {
   let today = new Date();
@@ -44,19 +43,21 @@ function getVideoView(viewCount) {
 }
 
 //updateVideoId
-function updateVideoId(videoId){
+function updateVideoId(videoId,commentCount){
   document.cookie = `id=${videoId}; path=/videoDetail.html`
+  document.cookie = `comment=${commentCount}; path=/videoDetail.html`
     window.location.href = "http://127.0.0.1:5500/videoDetail.html";
 // console.log(videoId);
 }
 
 //displayVideoList
 function displayVideoList(list) {
+  // console.log(list);
   videoContainer.innerHTML = "";
   list.forEach((element) => {
+    console.log(element.statistics);
     const videoDiv = document.createElement("div");
     videoDiv.className = "video";
-    // div.setAttribute('class','video')
     videoDiv.innerHTML = `
     <img src="${element.snippet.thumbnails.high.url}" alt="${
       element.snippet.title
@@ -74,7 +75,7 @@ function displayVideoList(list) {
           </div>
         </div>`;
         videoDiv.addEventListener("click", () => {
-          updateVideoId(element.id.videoId)
+          updateVideoId(element.id.videoId,element.statistics.commentCount)
         })
     videoContainer.append(videoDiv);
   });
