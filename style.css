@@ -55,6 +55,10 @@
   height: 350px;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease;
+}
+.video:hover{
+  transform: scale(1.05);
 }
 .video-img {
   width: 90%;

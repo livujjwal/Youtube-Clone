@@ -1,0 +1,45 @@
+#comment-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #000;
+    color: #FFF;
+font-family: Roboto;
+
+}
+#comment{
+    display: flex;
+    gap: 20px;
+
+}
+#author-logo{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    
+}
+#auhtor-name{
+    margin: 0px;
+font-size: 13px;
+font-weight: 700;
+}
+#timeOfComment{
+font-size: 12px;
+font-weight: 400;
+}
+#comment-brief{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#comment-text{
+    margin: 0px;
+    margin-left: 20px;
+font-size: 14px;
+font-weight: 400;
+}
+#like-count{
+    color: #AAA;
+    margin: 0px;
+}

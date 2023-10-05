@@ -42,14 +42,22 @@ function getVideoView(viewCount) {
   
   
 }
+
+//updateVideoId
+function updateVideoId(videoId){
+  document.cookie = `id=${videoId}; path=/videoDetail.html`
+    window.location.href = "http://127.0.0.1:5500/videoDetail.html";
+// console.log(videoId);
+}
+
 //displayVideoList
 function displayVideoList(list) {
   videoContainer.innerHTML = "";
   list.forEach((element) => {
-    const div = document.createElement("div");
-    div.className = "video";
+    const videoDiv = document.createElement("div");
+    videoDiv.className = "video";
     // div.setAttribute('class','video')
-    div.innerHTML = `
+    videoDiv.innerHTML = `
     <img src="${element.snippet.thumbnails.high.url}" alt="${
       element.snippet.title
     }" class="video-img" />
@@ -65,7 +73,10 @@ function displayVideoList(list) {
             <p class="video-view">${getVideoView(element.statistics.viewCount)}  ${getTimeGap(element.snippet.publishTime)}</p>
           </div>
         </div>`;
-    videoContainer.append(div);
+        videoDiv.addEventListener("click", () => {
+          updateVideoId(element.id.videoId)
+        })
+    videoContainer.append(videoDiv);
   });
 }
 
@@ -74,7 +85,7 @@ async function fetchChannelLogo(channelID){
  try {
   const response = await fetch(mainURL);
   const data =await response.json();
-  console.log(data.items[0].snippet.thumbnails.high.url);
+  // console.log(data.items[0].snippet.thumbnails.high.url);
   return data.items[0].snippet.thumbnails.high.url;
  } catch (error) {
   alert(`Failed to fetch channel logo for ${channelID}`)
@@ -108,7 +119,7 @@ async function fetchUserSerach(searchString) {
       data.items[i].channelLogo = currentChannelLogo;
 
     };
-      console.log(data.items);
+      // console.log(data.items);
     displayVideoList(data.items);
   } catch (error) {
     console.log(error);
@@ -118,3 +129,4 @@ inputBtn.addEventListener("click", () => {
   let searchString = userInput.value;
   fetchUserSerach(searchString);
 });
+
