@@ -3,18 +3,16 @@ const apiKey = "AIzaSyBXquP3mozAoCGA2MoQL332vfmYG-CeVHo";
 const baseURL = `https://www.googleapis.com/youtube/v3/commentThreads`;
 
 window.addEventListener("load",() => {
-    const videoId = document.cookie.split("=")[1];
-    console.log(videoId);
-    console.log(YT);
+    let videoId = document.cookie.split("=")[1];
+    // console.log(videoId);
     if(YT){
     new YT.Player("play-video",{
         height:"300",
         width:"500",
         videoId,
-    }
-    )}
+    });
     loadComments(videoId);
-
+}
 })
 // loadComments
 async function loadComments(videoId) {
@@ -22,7 +20,7 @@ async function loadComments(videoId) {
     const response = await fetch(`${baseURL}?key=${apiKey}&videoId=${videoId}&maxResults=10&part=snippet`);
     const data = await response.json();
     // console.log(data);
-    // console.log(data.items);
+    console.log(data.items);
     renderComments(data.items);
   } catch (error) {
     console.log(error);
@@ -32,7 +30,7 @@ async function loadComments(videoId) {
 function renderComments(commentList) {
 //   console.log(commentList);
   commentList.forEach((element) => {
-    console.log(element.snippet.topLevelComment.snippet.authorDisplayName);
+    // console.log(element.snippet.topLevelComment.snippet.authorDisplayName);
     const comment = document.createElement("div");
     comment.id = "comment";
     comment.innerHTML = `
