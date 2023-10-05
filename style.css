@@ -5,6 +5,8 @@
   background-color: #000;
 }
 #search-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 40vw;
   margin-inline: auto;
   display: flex;
@@ -43,53 +45,39 @@
     cursor: pointer;
 }
 #video-container {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 40px;
+  padding: 50px 40px;
 }
 .video {
   overflow: hidden;
-  box-shadow: 2px  0px 5px #000;
-  border-radius: 20px;
-  width: 250px;
-  height: 320px;
+  height: 350px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 .video-img {
-  border-radius: 2px 2px 0px 0px;
-  object-fit: fill;
-  width: 250px;
-  height: 240px;
-  box-sizing: border-box;
+  width: 90%;
+  height: 50%;
 }
 .video-info {
-  border-radius:2px;
-  width: 250px;
-  height: 100px;
   display: flex;
   background-color: #000;
-  color: #ffffff;
-  gap: 20px;
+  color: hsl(0, 0%, 100%);
 }
 .video-info-left {
+  padding-top: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #000;
 }
 .video-icon {
+  
   width: 36px;
   height: 36px;
   border-radius: 50%;
 }
 .video-info-right {
-  height: 12vh;
+  margin-inline: 20px;
   background-color: #000;
   display: flex;
   flex-direction: column;
@@ -99,7 +87,7 @@
 .video-view {
   overflow: hidden;
   margin: 0px;
-  padding: 5px;
+  padding-top: 5px;
   background-color: #000;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
