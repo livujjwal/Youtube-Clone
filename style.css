@@ -26,7 +26,7 @@ h2,h4{
   margin: 0px;
 }
 h4{
-  font-size: 20px;
+  font-size: 18px;
  font-weight: 100;
 }
 
@@ -39,11 +39,12 @@ display: flex;
 flex-direction: column;
 justify-items: center;
 gap: 10px;
+overflow-y: auto;
 }
 .horizontal-line{
   border-bottom: 2px solid  #303030;
 }
-#sb-1, #sb-2, #sb-3{
+#sb-1, #sb-2, .sb-3{
   padding: 0px;
   margin: 0px;
   padding-top: 20px;
@@ -59,11 +60,27 @@ gap: 10px;
   background: #212121;
 display: flex;
 align-items: center;
+transition: all 0.2s ease-in-out;
+}
+.sb-box:hover{
+  transform: scale(1.04);
+  cursor: pointer;
 }
 #navbar{
+  position: sticky;
+  top: 0px;
   background: #212121;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+}
+#nav-mid{
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 #search-box {
   margin-top: 20px;
@@ -72,7 +89,7 @@ align-items: center;
   margin-inline: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: #303030;
   border-radius: 5px;
   
@@ -106,6 +123,21 @@ align-items: center;
 #search-btn:hover{
     box-sizing: border-box;
     cursor: pointer;
+}
+#mic{
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+#user{
+  gap: 10px;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-around;
 }
 #video-container {
   display: grid;

@@ -1,60 +1,195 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    background-color: #000;
+* {
+  margin: 0px;
+  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #181818;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    padding: 50px;
+
+#logo {
+  padding-inline: 10px;
+  display: flex;
+  align-items: center;
+  background: #212121;
+  color: #ffffff;
 }
-#play-video{
-    width: 80vw;
-    height: 70vh;
-padding-inline: auto;
+h2,
+h4 {
+  padding: 0px;
+  background: #212121;
+  margin: 0px;
 }
-#comment-container{
-    padding-top: 8vh;
-    padding-left: 8vw;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    color: #FFF;
-font-family: Roboto;
+h4 {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+#side-bar {
+  position: fixed;
+  top: 75px;
+  margin: 0px;
+  color: #ffffff;
+  background: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 10px;
+  overflow-y: auto;
+}
+.horizontal-line {
+  border-bottom: 2px solid #303030;
+}
+#sb-1,
+#sb-2,
+.sb-3 {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 20px;
+  background: #212121;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 10px;
+}
+.sb-box {
+  padding-inline: 2vw;
+  gap: 10px;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.sb-box:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+#navbar {
+  position: sticky;
+  top: 0px;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#nav-mid {
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+#search-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 40vw;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #303030;
+  border-radius: 5px;
+}
+#search-input {
+  background: #121212;
+  flex-grow: 1;
+  padding: 10px 20px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+}
+#search-input::placeholder {
+  color: #aaaaaa;
+}
+#search-btn {
+  padding: 10px;
+  width: 4vw;
+  border: none;
+  border-radius: 2px;
+  background-color: #303030;
+  transition: all 0.5s ease;
+}
+
+.search-icon {
+  width: 100%;
+  transition: all 0.5s ease;
+  background-color: #303030;
+}
+#search-btn:hover {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#mic {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+#user {
+  gap: 10px;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-around;
+}
+
+#main {
+  display: flex;
+  gap: 20px;
+    background: #212121;
+  }
+#main-page {
+    padding-left: 280px;
+    padding-top: 70px;
+  display: flex;
+  flex-direction: column;
 
 }
-#comment{
-    display: flex;
-    gap: 20px;
-
+#play-video {
+  width: 60vw;
+  height: 50vh;
 }
-#author-logo{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    
+#comment-container {
+  padding-top: 8vh;
+  padding-left: 8vw;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: #fff;
+  font-family: Roboto;
 }
-#auhtor-name{
-    margin: 0px;
-font-size: 13px;
-font-weight: 700;
+#comment {
+  display: flex;
+  gap: 20px;
 }
-#timeOfComment{
-font-size: 12px;
-font-weight: 400;
+#author-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
-#comment-brief{
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+#auhtor-name {
+  margin: 0px;
+  font-size: 13px;
+  font-weight: 700;
+  background-color: #181818;
 }
-#comment-text{
-    margin: 0px;
-    margin-left: 20px;
-font-size: 14px;
-font-weight: 400;
+#timeOfComment {
+  font-size: 12px;
+  font-weight: 400;
 }
-#like-count{
-    color: #AAA;
-    margin: 0px;
+#comment-brief {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+#comment-text {
+  margin: 0px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+#like-count {
+  color: #aaa;
+  margin: 0px;
 }
