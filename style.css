@@ -1,8 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Roboto&display=swap');
 * {
+  margin: 0px;
     font-family: 'Inter', sans-serif;
     font-family: 'Roboto', sans-serif;
   background-color: #000;
+}
+#main{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  margin: 0px;
+  padding: 0px;
+  background: #212121;
+}
+#logo{
+  padding-inline: 10px;
+  display: flex;
+  align-items: center;
+  background: #212121;
+  color: #ffffff;
+
+}
+h2,h4{
+  padding:0px;
+  background: #212121;
+  margin: 0px;
+}
+h4{
+  font-size: 20px;
+ font-weight: 100;
+}
+
+#side-bar{
+
+  margin: 0px;
+color: #ffffff;
+background: #212121;
+display: flex;
+flex-direction: column;
+justify-items: center;
+gap: 10px;
+}
+.horizontal-line{
+  border-bottom: 2px solid  #303030;
+}
+#sb-1, #sb-2, #sb-3{
+  padding: 0px;
+  margin: 0px;
+  padding-top: 20px;
+  background: #212121;
+display: flex;
+flex-direction: column;
+justify-items: center;
+gap: 10px;
+}
+.sb-box{
+  padding-inline: 2vw;
+  gap: 10px;
+  background: #212121;
+display: flex;
+align-items: center;
+}
+#navbar{
+  background: #212121;
+  display: flex;
+
 }
 #search-box {
   margin-top: 20px;
@@ -23,14 +84,16 @@
   color: #ffffff;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 #search-input::placeholder {
   color: #aaaaaa;
 }
 #search-btn {
+  padding: 10px;
   width: 4vw;
   border: none;
+  border-radius: 2px ;
   background-color: #303030;
   transition: all 0.5s ease;
 }
