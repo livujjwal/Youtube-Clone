@@ -107,7 +107,7 @@ async function fetchVideoStatistics(videoID) {
 
 //fetchUserSerach
 async function fetchUserSerach(searchString) {
-  const mainURL = `${baseURL}/search?key=${apiKey}&q=${searchString}&part=snippet&maxResults=5`;
+  const mainURL = `${baseURL}/search?key=${apiKey}&q=${searchString}&part=snippet&maxResults=10`;
   try {
     const response = await fetch(mainURL);
     const data = await response.json();
@@ -130,4 +130,7 @@ inputBtn.addEventListener("click", () => {
   let searchString = userInput.value;
   fetchUserSerach(searchString);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  fetchUserSerach("hello")
+ })
 

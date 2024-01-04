@@ -5,11 +5,14 @@
     font-family: 'Roboto', sans-serif;
   background-color: #000;
 }
+#main-page{
+  background-color: #000;
+  display: flex;
+  /* padding-left: 280px; */
+}
 #main{
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  margin: 0px;
-  padding: 0px;
+  display: flex;
+  padding-left: 280px;
   background: #212121;
 }
 #logo{
@@ -31,7 +34,9 @@ h4{
 }
 
 #side-bar{
-
+  position: fixed;
+  top: 75px;
+left: 0px;
   margin: 0px;
 color: #ffffff;
 background: #212121;

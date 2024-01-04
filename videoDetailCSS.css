@@ -24,9 +24,9 @@ h4 {
 }
 
 #side-bar {
+    padding-inline: 20px;
   position: fixed;
   top: 75px;
-  margin: 0px;
   color: #ffffff;
   background: #212121;
   display: flex;
@@ -136,19 +136,20 @@ h4 {
 
 #main {
   display: flex;
-  gap: 20px;
     background: #212121;
   }
 #main-page {
     padding-left: 280px;
-    padding-top: 70px;
+    padding-top: 0px;
   display: flex;
   flex-direction: column;
 
 }
 #play-video {
+    padding: 40px;
   width: 60vw;
   height: 50vh;
+  border-radius: 20px;
 }
 #comment-container {
   padding-top: 8vh;
