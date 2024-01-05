@@ -27,27 +27,25 @@ function getTimeGap(publishTime) {
   return `${Math.ceil(timeGap / secondInYear)} years ago`;
 }
 function getVideoView(viewCount) {
-  if (viewCount<1000) {
-    return `${Math.floor(viewCount)} views`
+  if (viewCount < 1000) {
+    return `${Math.floor(viewCount)} views`;
   }
   if (viewCount < 100000) {
-    return `${Math.floor(viewCount/1000)}k views`
+    return `${Math.floor(viewCount / 1000)}k views`;
   }
-  if (viewCount< 10000000) {
-    return `${Math.floor(viewCount/100000)}lakhs views`;
+  if (viewCount < 10000000) {
+    return `${Math.floor(viewCount / 100000)}lakhs views`;
   }
-  
-    return `${Math.floor(viewCount/10000000)}Cr views`;
-  
-  
+
+  return `${Math.floor(viewCount / 10000000)}Cr views`;
 }
 
 //updateVideoId
-function updateVideoId(videoId,commentCount){
-  document.cookie = `id=${videoId}; path=/videoDetail.html`
-  document.cookie = `comment=${commentCount}; path=/videoDetail.html`
-    window.location.href = "http://127.0.0.1:5500/videoDetail.html";
-// console.log(videoId);
+function updateVideoId(videoId, commentCount) {
+  document.cookie = `id=${videoId}; path=/videoDetail.html`;
+  document.cookie = `comment=${commentCount}; path=/videoDetail.html`;
+  window.location.href = "http://127.0.0.1:5500/videoDetail.html";
+  // console.log(videoId);
 }
 
 //displayVideoList
@@ -71,37 +69,39 @@ function displayVideoList(list) {
           <div class="video-info-right">
             <h4 class="video-title">${element.snippet.title.substr(0, 50)}</h4>
             <h5 class="video-channel">${element.snippet.channelTitle}</h5>
-            <p class="video-view">${getVideoView(element.statistics.viewCount)}  ${getTimeGap(element.snippet.publishTime)}</p>
+            <p class="video-view">${getVideoView(
+              element.statistics.viewCount
+            )}  ${getTimeGap(element.snippet.publishTime)}</p>
           </div>
         </div>`;
-        videoDiv.addEventListener("click", () => {
-          updateVideoId(element.id.videoId,element.statistics.commentCount)
-        })
+    videoDiv.addEventListener("click", () => {
+      updateVideoId(element.id.videoId, element.statistics.commentCount);
+    });
     videoContainer.append(videoDiv);
   });
 }
 
-async function fetchChannelLogo(channelID){
- const mainURL = `${baseURL}/channels?key=${apiKey}&id=${channelID}&part=snippet`;
- try {
-  const response = await fetch(mainURL);
-  const data =await response.json();
-  // console.log(data.items[0].snippet.thumbnails.high.url);
-  return data.items[0].snippet.thumbnails.high.url;
- } catch (error) {
-  alert(`Failed to fetch channel logo for ${channelID}`)
- }
+async function fetchChannelLogo(channelID) {
+  const mainURL = `${baseURL}/channels?key=${apiKey}&id=${channelID}&part=snippet`;
+  try {
+    const response = await fetch(mainURL);
+    const data = await response.json();
+    // console.log(data.items[0].snippet.thumbnails.high.url);
+    return data.items[0].snippet.thumbnails.high.url;
+  } catch (error) {
+    alert(`Failed to fetch channel logo for ${channelID}`);
+  }
 }
 //fetchVideoStatistics
 async function fetchVideoStatistics(videoID) {
-  const mainURL = `${baseURL}/videos?key=${apiKey}&part=statistics&id=${videoID}`
+  const mainURL = `${baseURL}/videos?key=${apiKey}&part=statistics&id=${videoID}`;
   try {
     const response = await fetch(mainURL);
     const data = await response.json();
     // console.log(data.items[0].statistics);
     return data.items[0].statistics;
   } catch (error) {
-    alert(`Failed to fetch statistics for ${videoID}`)
+    alert(`Failed to fetch statistics for ${videoID}`);
   }
 }
 
@@ -118,9 +118,8 @@ async function fetchUserSerach(searchString) {
       let currentChannelID = data.items[i].snippet.channelId;
       const currentChannelLogo = await fetchChannelLogo(currentChannelID);
       data.items[i].channelLogo = currentChannelLogo;
-
-    };
-      // console.log(data.items);
+    }
+    // console.log(data.items);
     displayVideoList(data.items);
   } catch (error) {
     console.log(error);
@@ -131,6 +130,5 @@ inputBtn.addEventListener("click", () => {
   fetchUserSerach(searchString);
 });
 document.addEventListener("DOMContentLoaded", () => {
-  fetchUserSerach("hello")
- })
-
+  fetchUserSerach("hello");
+});
